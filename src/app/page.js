@@ -112,6 +112,25 @@ export default function Home() {
 
       {/* Reader Modal */}
       {selectedPost && (
+        <div className="modal-overlay" onClick={() => setSelectedPost(null)} style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(249, 251, 249, 0.95)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <div className="modal-content" onClick={e => e.stopPropagation()} style={{background: '#fff', padding: '3rem', borderRadius: '24px', maxWidth: '800px', width: '90%', maxHeight: '90vh', overflowY: 'auto', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', position: 'relative'}}>
+            <button onClick={() => setSelectedPost(null)} style={{position: 'absolute', top: '1.5rem', right: '1.5rem', background: '#f3f4f6', border: 'none', color: '#333', fontSize: '1.5rem', width: '40px', height: '40px', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>&times;</button>
+            <span className="tag">{selectedPost.tag}</span>
+            <h2 style={{fontFamily: 'Lora, serif', fontSize: '2.5rem', color: '#166534', margin: '1.5rem 0 1rem'}}>{selectedPost.title}</h2>
+            <div className="meta" style={{marginBottom: '2rem'}}>Written by <strong>{selectedPost.author}</strong> • {selectedPost.time}</div>
+            <img src={selectedPost.image} alt={selectedPost.title} style={{width: '100%', height: '350px', objectFit: 'cover', borderRadius: '16px', marginBottom: '2rem'}} />
+            <div style={{fontSize: '1.1rem', lineHeight: '1.8', color: '#4b5563', whiteSpace: 'pre-wrap'}}>{selectedPost.content}</div>
+            
+            {!adsDisabled && (
+              <div className="eco-ad-bar" style={{marginTop: '3rem'}}>
+                <span className="ad-label">ARTICLE SPONSOR</span>
+                <div className="ad-content">Get 20% off Bamboo Home Essentials.</div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Interstitial Ad Modal */}
       {showInterstitial && (
         <div className="modal-overlay" style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.95)', zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
@@ -155,25 +174,6 @@ export default function Home() {
           <div style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
             <button style={{background: 'var(--primary)', color: '#fff', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.85rem'}}>Shop Now</button>
             <button onClick={() => setShowFloatingAd(false)} style={{background: 'none', border: 'none', color: '#999', fontSize: '1.5rem', cursor: 'pointer'}}>×</button>
-          </div>
-        </div>
-      )}
-
-        <div className="modal-overlay" onClick={() => setSelectedPost(null)} style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(249, 251, 249, 0.95)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <div className="modal-content" onClick={e => e.stopPropagation()} style={{background: '#fff', padding: '3rem', borderRadius: '24px', maxWidth: '800px', width: '90%', maxHeight: '90vh', overflowY: 'auto', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', position: 'relative'}}>
-            <button onClick={() => setSelectedPost(null)} style={{position: 'absolute', top: '1.5rem', right: '1.5rem', background: '#f3f4f6', border: 'none', color: '#333', fontSize: '1.5rem', width: '40px', height: '40px', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>&times;</button>
-            <span className="tag">{selectedPost.tag}</span>
-            <h2 style={{fontFamily: 'Lora, serif', fontSize: '2.5rem', color: '#166534', margin: '1.5rem 0 1rem'}}>{selectedPost.title}</h2>
-            <div className="meta" style={{marginBottom: '2rem'}}>Written by <strong>{selectedPost.author}</strong> • {selectedPost.time}</div>
-            <img src={selectedPost.image} alt={selectedPost.title} style={{width: '100%', height: '350px', objectFit: 'cover', borderRadius: '16px', marginBottom: '2rem'}} />
-            <div style={{fontSize: '1.1rem', lineHeight: '1.8', color: '#4b5563', whiteSpace: 'pre-wrap'}}>{selectedPost.content}</div>
-            
-            {!adsDisabled && (
-              <div className="eco-ad-bar" style={{marginTop: '3rem'}}>
-                <span className="ad-label">ARTICLE SPONSOR</span>
-                <div className="ad-content">Get 20% off Bamboo Home Essentials.</div>
-              </div>
-            )}
           </div>
         </div>
       )}
