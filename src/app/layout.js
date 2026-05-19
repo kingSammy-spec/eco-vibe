@@ -5,8 +5,8 @@ export const metadata = {
   description: 'Discover eco-friendly products, sustainable living tips, and green lifestyle guides. Join the EcoVibe community and make a positive impact on the planet.',
   keywords: ['eco friendly', 'sustainable living', 'green lifestyle', 'zero waste', 'eco products', 'environmental tips', 'sustainability', 'climate action', 'eco vibe'],
   authors: [{ name: 'EcoVibe' }],
-  verification: {
-    google: 'google27fcd6f303a9589c'
+  other: {
+    'google-site-verification': 'google27fcd6f303a9589c'
   },
   robots: {
     index: true,
