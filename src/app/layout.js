@@ -6,7 +6,7 @@ export const metadata = {
   keywords: ['eco friendly', 'sustainable living', 'green lifestyle', 'zero waste', 'eco products', 'environmental tips', 'sustainability', 'climate action', 'eco vibe'],
   authors: [{ name: 'EcoVibe' }],
   other: {
-    'google-site-verification': 'google27fcd6f303a9589c'
+    'google-adsense-account': 'ca-pub-7322019754286753'
   },
   robots: {
     index: true,
