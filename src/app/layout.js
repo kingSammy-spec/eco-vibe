@@ -1,4 +1,5 @@
 export const metadata = {
+import Script from 'next/script';
   title: 'EcoVibe | Sustainable Living & Green Lifestyle Tips',
   description: 'Discover eco-friendly products, sustainable living tips, and green lifestyle guides. Join the EcoVibe community and make a positive impact on the planet.',
   keywords: ['eco friendly', 'sustainable living', 'green lifestyle', 'zero waste', 'eco products', 'environmental tips', 'sustainability', 'climate action', 'eco vibe'],
@@ -30,7 +31,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>{children}      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7322019754286753"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
+      </body>
     </html>
   )
 }
